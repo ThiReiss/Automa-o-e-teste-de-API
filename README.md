@@ -5,18 +5,25 @@ Documentação sobre automação e testes em página de treino solicitada e vali
 # Índice 📖
 * [Descrição do Projeto](#descrição-do-projeto)
 * [Status do Projeto](#status-do-Projeto)
-* [Automação e testes no Cypress](#automacao)
-* [Teste de API](#api)
-* [Desafios Encontrados](#desafios)
-* [Tecnologias utilizadas](#tecnologias-utilizadas)
-* [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras)
-* [Licença](#licença)
+* [Objetivo](#automacao1)
+* [Tecnologias utilizadas(Automação)](#tecnologias-utilizadas)
+* [Cenários](#automacao)
+* [Forma de execução da aplicação](#exec)
+* [Desafios Encontrados (Automação)](#desafios)
+* [Etapas do fluxo](#fluxx)
 * [Acesso ao Projeto](#acesso-ao-projeto)
+* [Teste de API](#api)
+* [Tecnologias utilizadas(API)](#tecnologias-utilizadas)
+* [Teste Executados](#texect)
+* [Validação do JSON](#jjson)
+* [Teste Extra](#textrarr)
+* [Licença](#licença)
+* [Pessoa Desenvolvedora dos Projetos](#pessoas-desenvolvedoras)
 * [Conclusão](#conclusão)
 
-<h4 align="center"> 
+<h2 align="center"> 
 	✔️ Projeto Finalizado  ✔️
-</h4>
+</h2>
 
 ## 🎯 Objetivo do projeto: Automação
 
@@ -49,16 +56,6 @@ Validar e automatizar fluxos de:
 
 - A suíte pode ser integrada com **Allure**, **Mochawesome** ou **Cypress Dashboard**
 - Prints automáticos e vídeos de execução podem ser habilitados no `cypress.config.ts`
-
-## ▶️ Como Executar
-
-1. **Instale as dependências:**
-
-npm install cypress -D
-
-2. **Rodar o Cypress**
-
-npx cypress open
 
 ---
 
@@ -111,6 +108,97 @@ Todos os testes começam com o carregamento da URL principal, onde os elementos 
 - Preenchimento dinâmico dos inputs de cada linha com base no índice.
 - Marcação de checkboxes e radios quando presentes.
 - Clique nos botões por linha, validando o `alert` com o nome correto.
+
+
+## ▶️ Como Executar
+
+1. **Instale as dependências:**
+
+       npm install cypress -D
+
+2. **Rode o Cypress**
+
+       npx cypress open
+
+3. Escolha um navegador compátivel
+
+       🌐 Chrome
+       🌐 Edge
+
+4. Escolha o arquivo de teste
+
+       (Automação.cy.ts) e inicie a execução.
+
+<h1 align="center"> 
+	👨🏾‍🔬 Teste de API 👨🏾‍🔬
+</h1>
+
+## 🔧 Tecnologias Utilizadas
+
+- ✅ Cypress
+- ✅ TypeScript
+- ✅ Html
+- ✅Comando: console.table(response.body); Para monitoramente de JSON no Console.
+---
+
+## 📚 Casos de Teste Executados
+
+### 🔍 GET - Consultas
+
+| Caso de Teste                       | Endpoint                         | Resultado Esperado             | Status Esperado |
+|------------------------------------|----------------------------------|--------------------------------|-----------------|
+| ✅ Listar todos os livros           | `/Books`                         | Lista completa de livros       | `200 OK`        |
+| ✅ Consultar livro existente        | `/Books/2`                       | Livro com `id: 2`              | `200 OK`        |
+| ❌ Consultar livro inexistente      | `/Books/9999`                    | Mensagem: `Not Found`          | `404 Not Found` |
+| ❌ Consultar com ID inválido       | `/Books/ASD#@!`                  | Erro de validação              | `400 Bad Request`|
+
+---
+
+### ➕ POST - Criação
+
+| Caso de Teste                       | Endpoint                         | Resultado Esperado                          | Status Esperado |
+|------------------------------------|----------------------------------|---------------------------------------------|-----------------|
+| ✅ Criar novo livro válido          | `/Books`                         | Livro criado com título correto             | `200 OK`        |
+| ❌ Criar livro com ID inválido      | `/Books`                         | Erro: validação de ID                       | `400 Bad Request`|
+| ❌ Criar livro com campos inválidos | `/Books`                         | Erro: formatação incorreta (pageCount/data) | `400 Bad Request`|
+
+---
+
+### 🔄 PUT - Atualização
+
+| Caso de Teste                       | Endpoint                         | Resultado Esperado                          | Status Esperado |
+|------------------------------------|----------------------------------|---------------------------------------------|-----------------|
+| ✅ Atualizar livro existente        | `/Books/2`                       | Título atualizado com sucesso               | `200 OK`        |
+| ❌ Atualizar livro com ID inválido  | `/Books/AHASDK`                  | Erro de validação                           | `400 Bad Request`|
+
+---
+
+### ❌ DELETE - Exclusão
+
+| Caso de Teste                       | Endpoint                         | Resultado Esperado               | Status Esperado |
+|------------------------------------|----------------------------------|----------------------------------|-----------------|
+| ✅ Deletar livro existente          | `/Books/2`                       | Resposta sem conteúdo            | `200 OK`        |
+| ❌ Deletar livro com ID inválido    | `/Books/AHSAHJDAK`               | Erro de validação                | `400 Bad Request`|
+
+---
+
+## 📊 Resumo dos Testes
+
+| Total de Testes | Sucesso (`2xx`) | Falha Esperada (`4xx`) |
+|-----------------|------------------|-------------------------|
+| 11              | 5                | 6                       |
+
+---
+
+## 🖥️ Exemplo de Validações com Comando de Console
+![958e63c3-baa9-44c3-afeb-a64e563c2029](https://github.com/user-attachments/assets/2328f770-c89c-4858-b9e8-92da0ac784fa)   
+
+---
+
+## 🆕 Teste extra
+ Caso a API salvasse a criação dos livros, Poderíamos seguir testando a criação dinâmica com o código abaixo e seguir com o teste de resposta para validar o registro. Tendo em vista que é uma API Fake o resultado esperado para essa linha é o erro 404, caso necessário podemos seguir com o código: 
+
+![AAA](https://github.com/user-attachments/assets/ee093de6-ee46-4b53-81fe-5c69044ec4a9)
 
 
 

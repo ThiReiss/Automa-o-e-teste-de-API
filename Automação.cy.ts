@@ -129,12 +129,10 @@ describe('Fluxo Completo', () => {
    it('Preenche inputs, marca checkbox/radio e lida com alerts', () => {
      cy.visit('https://www.wcaquino.me/cypress/componentes.html')
 
-    // Stub do alert apenas uma vez
     cy.window().then((win) => {
       cy.stub(win, 'alert').as('alerta')
     })
 
-    // Itera pelas linhas da tabela
     cy.get('#tabelaUsuarios tbody tr').each(($row, index) => {
       const nome = $row.find('td').eq(0).text().trim()
 
@@ -161,7 +159,7 @@ describe('Fluxo Completo', () => {
         cy.wrap(radio).check({ force: true })
       }
 
-      // Clica no botão se existir e valida alert
+      // Clicar no botão se existir e validar alert
       const botao = $row.find('input[type="button"]')
       if (botao.length) {
         cy.wrap(botao).click()
@@ -170,13 +168,13 @@ describe('Fluxo Completo', () => {
     })
   });
 
-  it('Digita no campo de iframe e OK no alert', () => {
+  it('Digitar no campo de iframe', () => {
     cy.visit('https://www.wcaquino.me/cypress/componentes.html');
     cy.on('window:alert', (msg) => {
       expect(msg).to.equal('Click OK!');
     });
     getIframeBody().within(() => {
-      cy.get('#tfield').type('Texto no iframe');
+      cy.get('#tfield').type('Eh bait');
       cy.get('#otherButton').click();
     });
   });

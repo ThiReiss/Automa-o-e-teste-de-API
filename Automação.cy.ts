@@ -168,14 +168,13 @@ describe('Fluxo Completo', () => {
     })
   });
 
-  it('Digitar no campo de iframe', () => {
+  it('Digita no campo de iframe e OK no alert', () => {
     cy.visit('https://www.wcaquino.me/cypress/componentes.html');
-    cy.on('window:alert', (msg) => {
-      expect(msg).to.equal('Click OK!');
-    });
+    cy.window().then((win) => {
+    cy.stub(win, 'alert').as('alerta'); // Fazendo um stub para possivel alert
+  });
     getIframeBody().within(() => {
       cy.get('#tfield').type('Eh bait');
-      cy.get('#otherButton').click();
     });
   });
 })

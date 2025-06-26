@@ -200,5 +200,18 @@ Todos os testes começam com o carregamento da URL principal, onde os elementos 
 
 ![AAA](https://github.com/user-attachments/assets/ee093de6-ee46-4b53-81fe-5c69044ec4a9)
 
+## 📜 Licença
+
+Este projeto está licenciado sob a Licença Apache 2.0
+
+## 🧑‍💻 Desenvolvedor
+
+Este projeto foi desenvolvido por:
+
+**Nome**: Thiago Santos  
+**Função**: QA (Quality Assurance)  
+- **LinkedIn**: [https://www.linkedin.com/in/thiagosantos](https://www.linkedin.com/in/thiago-santos-6a01012b6/)
+
+
 
 

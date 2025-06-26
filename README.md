@@ -211,6 +211,9 @@ Este projeto foi desenvolvido para demonstrar a **automação de testes** em um 
 - Validação de **respostas de sucesso** e **erros** da API.
 - Garantia da **conformidade dos dados** com a estrutura da API.
 - **Automatização de testes** para garantir a integridade do sistema de forma rápida e eficiente.
+- **Automatização de Fluxo** em ambiente de teste
+- **Testes de automação e funcionalidade de componentes web**
+- **Fluxos UX**
 
 A utilização do combo de **Cypress** e **TypeScript** oferece uma forma robusta e eficiente de garantir a qualidade de APIs e rápida automação, com a capacidade de escrever testes legíveis, escaláveis e de fácil manutenção.
 

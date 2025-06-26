@@ -200,6 +200,23 @@ Todos os testes começam com o carregamento da URL principal, onde os elementos 
 
 ![AAA](https://github.com/user-attachments/assets/ee093de6-ee46-4b53-81fe-5c69044ec4a9)
 
+--- 
+
+## 🏁 Conclusão
+
+Este projeto foi desenvolvido para demonstrar a **automação de testes** em um ambiente controlado e testes em **API RESTful** ambos usando **Cypress** e **TypeScript**. Durante o desenvolvimento, foram abordados os seguintes pontos:
+
+- **Testes completos** do fluxo CRUD da API `Books`.
+- Validação de **respostas de sucesso** e **erros** da API.
+- Garantia da **conformidade dos dados** com a estrutura da API.
+- **Automatização de testes** para garantir a integridade do sistema de forma rápida e eficiente.
+
+A utilização do combo de **Cypress** e **TypeScript** oferece uma forma robusta e eficiente de garantir a qualidade de APIs e rápida automação, com a capacidade de escrever testes legíveis, escaláveis e de fácil manutenção.
+
+A implementação está pronta para ser expandida, podendo ser utilizada em diferentes tipos de testes para outras APIs ou fluxos de autenticação. 
+
+Por fim, com este projeto, foi possível proporcionar um ambiente de testes automatizados eficaz, aumentando a confiabilidade e reduzindo o tempo gasto com testes manuais.
+
 ## 📜 Licença
 
 Este projeto está licenciado sob a Licença Apache 2.0

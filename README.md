@@ -17,9 +17,10 @@ Documentação sobre automação e testes em página de treino solicitada e vali
 * [Teste Executados](#texect)
 * [Validação do JSON](#jjson)
 * [Teste Extra](#textrarr)
+* [Conclusão](#conclusão)
 * [Licença](#licença)
 * [Pessoa Desenvolvedora dos Projetos](#pessoas-desenvolvedoras)
-* [Conclusão](#conclusão)
+
 
 <h2 align="center"> 
 	✔️ Projeto Finalizado  ✔️
